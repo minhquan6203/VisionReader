@@ -53,7 +53,7 @@ In this repository, we introduce a novel approach called VisionReader, specifica
 
 ### Performance
 
-Our VisionReader\textsubscript{\textit{ViT5}} achieves promising results on the ViOCRVQA dataset, with an Exact Match (EM) score of 0.4116 and an F1-score of 0.6990 on the test set. These results demonstrate the effectiveness of our approach in addressing the challenges inherent in a ViOCRVQA dataset.
+Our VisionReader achieves promising results on the ViOCRVQA dataset, with an Exact Match (EM) score of 0.4116 and an F1-score of 0.6990 on the test set. These results demonstrate the effectiveness of our approach in addressing the challenges inherent in a ViOCRVQA dataset.
 
 ## Key Insights
 
