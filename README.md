@@ -1,5 +1,5 @@
 # VisionReader
-![vr_structure](pic\vr_structure.PNG)
+![vr_structure](pic/vr_structure.PNG)
 
 Welcome to the VisionReader repository! This repository contains the implementation methods for the Optical Character Recognition - Visual Question Answering (OCR-VQA) task, particularly focusing on the Vietnamese language.
 
@@ -123,4 +123,4 @@ If you use the ViOCRVQA dataset or the VisionReader in your research, please cit
 
 ## Contact
 
-For any inquiries or feedback regarding the ViTextVQA dataset, please contact  [21521333@gm.uit.edu.vn](mailto:21521333@gm.uit.edu.vn) or [21522163@gm.uit.edu.vn](mailto:21522163@gm.uit.edu.vn).
+For any inquiries or feedback regarding the VisionReader, please contact  [21521333@gm.uit.edu.vn](mailto:21521333@gm.uit.edu.vn) or [21522163@gm.uit.edu.vn](mailto:21522163@gm.uit.edu.vn).
