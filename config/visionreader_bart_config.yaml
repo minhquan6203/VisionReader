@@ -1,0 +1,81 @@
+data:
+  images_train_folder: data/st_images
+  train_dataset: data/train.json
+  images_val_folder: data/st_images
+  val_dataset: data/dev.json
+  test_dataset: data/test.json
+  num_worker: 0
+
+tokenizer:
+  padding: max_length
+  max_input_length: 80
+  max_target_length: 20
+  truncation: True
+  return_token_type_ids: True
+  return_attention_mask: True
+
+text_embedding:
+  text_encoder: vinai/bartpho-syllable-base
+  remove_accents_rate: 0
+  use_word_seg: False
+  use_lora: False
+  # lora_target_modules: ["q", ".k", "v", ".o", "wi_0", "wi_1", "wo"]
+  lora_target_modules: ["q", "v"]
+  lora_r: 8
+  lora_alpha: 16
+  lora_dropout: 0.05
+
+vision_embedding:
+  image_encoder: google/vit-base-patch16-224-in21k
+  already_extracted: False
+  feature_path: data/feature_VIT
+  d_feature: 768
+
+ocr_embedding:
+  sort_type: top-left bottom-right # score or top-left bottom-right
+  path_ocr: data/ocr_feature
+  threshold: 0.3
+  remove_accents_rate: 0
+  use_word_seg: False
+  max_scene_text: 32 #if not use, set 0
+  d_det: 256
+  d_rec: 256
+  max_2d_position_embeddings: 1024
+
+obj_embedding:
+  path_obj: data/obj_feature
+  use_attr: False # the  max_input_length should be set 300 if True else 100
+  max_bbox: 32  #if not use, set 0
+  d_obj: 2048
+  d_grid: 1024
+
+generator_args:
+  max_length: 16
+  min_length: 1
+  num_beams: 4
+  length_penalty: 1.5
+  no_repeat_ngram_size: 3
+  early_stopping: True
+
+model:
+  type_model: visionreader_bart  # Custom name for the multimodal model
+
+train:
+  output_dir: checkpoint
+  cuda_device: cuda:0
+  precision: float32
+  with_image: True
+  seed: 12345
+  num_train_epochs: 10
+  patience: 5
+  learning_rate: 3.0e-5
+  weight_decay: 1.0e-4
+  metric_for_best_model: em
+  per_device_train_batch_size: 16
+  per_device_valid_batch_size: 16
+
+infer:
+  with_answer: True
+  images_test_folder: data/st_images
+  test_dataset: data/test.json
+  per_device_eval_batch_size: 32
