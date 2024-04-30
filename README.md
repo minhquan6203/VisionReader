@@ -93,7 +93,7 @@ We welcome contributions from the community to further advance research in OCR-V
 
 If you use the ViOCRVQA dataset or the VisionReader in your research, please cite our article (preprint):
 
-[ViOCRVQA: Novel Benchmark Dataset and VisionReader for Visual Question Answering by Understanding Vietnamese Text in Images](link)
+[ViOCRVQA: Novel Benchmark Dataset and VisionReader for Visual Question Answering by Understanding Vietnamese Text in Images](https://arxiv.org/abs/2404.18397)
 
 ## Authors
 
